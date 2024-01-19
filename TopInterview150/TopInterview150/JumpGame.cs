@@ -2,50 +2,50 @@
 
 public class JumpGame
 {
-	public bool CanJump(int[] nums)
-	{
-		int bounder = 0;
+    public bool CanJump(int[] nums)
+    {
+        int bounder = 0;
 
-		for (int i = 0; i <= bounder; i++)
-		{
-			int p = i + nums[i];
+        for (int i = 0; i <= bounder; i++)
+        {
+            int p = i + nums[i];
 
-			if (p >= nums.Length - 1)
-				return true;
+            if (p >= nums.Length - 1)
+                return true;
 
-			if (p > bounder)
-				bounder = p;
-		}
+            if (p > bounder)
+                bounder = p;
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	public int Jump(int[] nums)
-	{
-		int lastStepBounder = -1;
-		int stepBounder = 0;
-		int stepCounter = 0;
-		int currPosition = 0;
+    public int Jump(int[] nums)
+    {
+        int lastStepBounder = -1;
+        int stepBounder = 0;
+        int stepCounter = 0;
+        int currPosition = 0;
 
-		for (int i = 0; i < nums.Length; i++)
-		{
-			if (currPosition >= nums.Length - 1)
-				break;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (currPosition >= nums.Length - 1)
+                break;
 
-			currPosition = i + nums[i];
+            currPosition = i + nums[i];
 
-			if (currPosition > stepBounder)
-			{
-				if (i > lastStepBounder)
-				{
-					stepCounter++;
-					lastStepBounder = stepBounder;
-				}
+            if (currPosition > stepBounder)
+            {
+                if (i > lastStepBounder)
+                {
+                    stepCounter++;
+                    lastStepBounder = stepBounder;
+                }
 
-				stepBounder = currPosition;
-			}
-		}
+                stepBounder = currPosition;
+            }
+        }
 
-		return stepCounter;
-	}
+        return stepCounter;
+    }
 }
