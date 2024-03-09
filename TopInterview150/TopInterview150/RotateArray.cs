@@ -16,7 +16,7 @@ public class RotateArray
             p = (p + k) % nums.Length;
             (e, nums[p]) = (nums[p], e);
 
-            if (p == s)
+            if (p == s && p < nums.Length - 1)
             {
                 s++;
                 p++;
